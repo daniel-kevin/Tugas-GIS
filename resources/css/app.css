@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.leaflet-popup-content-wrapper, .leaflet-popup-tip {
+    background-color: transparent;
+}
+
+.leaflet-popup-content-wrapper .leaflet-popup-content {
+    min-width: min-content;
+}
+
+.leaflet-popup-tip-container {
+
+}
+
+.leaflet-popup-close-button > span{
+    color:black;
+    position: absolute;
+    top: 0px;
+    right: 2px;
+}
+.leaflet-popup-close-button{
+    position: relative;
+}
+.leaflet-popup-content{
+    margin: 0;
+}
