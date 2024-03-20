@@ -1,0 +1,83 @@
+{
+  "node_modules/leaflet-routing-machine/dist/leaflet.routing.icons.png": {
+    "file": "assets/leaflet.routing.icons-3cf31e14.png",
+    "src": "node_modules/leaflet-routing-machine/dist/leaflet.routing.icons.png"
+  },
+  "node_modules/leaflet-routing-machine/dist/routing-icon.png": {
+    "file": "assets/routing-icon-772d3493.png",
+    "src": "node_modules/leaflet-routing-machine/dist/routing-icon.png"
+  },
+  "node_modules/leaflet/dist/images/marker-icon-2x.png": {
+    "assets": [
+      "assets/marker-icon-2x-00179c4c.png"
+    ],
+    "file": "assets/marker-icon-2x-9a28b8dd.js",
+    "isDynamicEntry": true,
+    "src": "node_modules/leaflet/dist/images/marker-icon-2x.png"
+  },
+  "node_modules/leaflet/dist/images/marker-icon.png": {
+    "assets": [
+      "assets/marker-icon-574c3a5c.png"
+    ],
+    "file": "assets/marker-icon-dcc39de6.js",
+    "isDynamicEntry": true,
+    "src": "node_modules/leaflet/dist/images/marker-icon.png"
+  },
+  "node_modules/leaflet/dist/images/marker-shadow.png": {
+    "assets": [
+      "assets/marker-shadow-264f5c64.png"
+    ],
+    "file": "assets/marker-shadow-a3e17d65.js",
+    "isDynamicEntry": true,
+    "src": "node_modules/leaflet/dist/images/marker-shadow.png"
+  },
+  "node_modules/leaflet/dist/leaflet-src.esm.js": {
+    "file": "assets/leaflet-src.esm-9c358b30.js",
+    "isDynamicEntry": true,
+    "src": "node_modules/leaflet/dist/leaflet-src.esm.js"
+  },
+  "resources/assets/img/marker.png": {
+    "file": "assets/marker-5e88398c.png",
+    "src": "resources/assets/img/marker.png"
+  },
+  "resources/assets/img/marker3.png": {
+    "file": "assets/marker3-7169372b.png",
+    "src": "resources/assets/img/marker3.png"
+  },
+  "resources/css/app.css": {
+    "file": "assets/app-2c8d46a6.css",
+    "isEntry": true,
+    "src": "resources/css/app.css"
+  },
+  "resources/js/app.css": {
+    "file": "assets/app-df25828f.css",
+    "src": "resources/js/app.css"
+  },
+  "resources/js/app.js": {
+    "assets": [
+      "assets/marker-5e88398c.png",
+      "assets/leaflet.routing.icons-3cf31e14.png",
+      "assets/routing-icon-772d3493.png"
+    ],
+    "css": [
+      "assets/app-df25828f.css"
+    ],
+    "dynamicImports": [
+      "node_modules/leaflet/dist/images/marker-icon-2x.png",
+      "node_modules/leaflet/dist/images/marker-icon.png",
+      "node_modules/leaflet/dist/images/marker-shadow.png",
+      "node_modules/leaflet/dist/leaflet-src.esm.js",
+      "node_modules/leaflet/dist/leaflet-src.esm.js",
+      "node_modules/leaflet/dist/leaflet-src.esm.js",
+      "node_modules/leaflet/dist/leaflet-src.esm.js",
+      "node_modules/leaflet/dist/leaflet-src.esm.js",
+      "node_modules/leaflet/dist/leaflet-src.esm.js",
+      "node_modules/leaflet/dist/leaflet-src.esm.js",
+      "node_modules/leaflet/dist/leaflet-src.esm.js",
+      "node_modules/leaflet/dist/leaflet-src.esm.js"
+    ],
+    "file": "assets/app-9b3bcd9b.js",
+    "isEntry": true,
+    "src": "resources/js/app.js"
+  }
+}
