@@ -91,7 +91,7 @@ export default {
     },
     onMapReady(){
       this.mapObject = this.$refs.map.leafletObject
-      
+      console.log(this.markers)
     },
     setCurrentPosition(position){
       let latitude = position.coords.latitude

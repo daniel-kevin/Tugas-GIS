@@ -35,6 +35,7 @@ const mutations = {
   
 const actions = {
     addMarker({commit}, marker){
+        console.log(marker)
         state.markers.push(marker)
     },
     addWayPoints({commit}, marker){
