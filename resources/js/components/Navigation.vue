@@ -38,8 +38,19 @@
                             Buat Polygon
                         </div>
                     </div>
+                    <div @click="handleClick('ADD_CIRCLE')" class="grid justify-center border border-gray-500 rounded-md hover:cursor-pointer hover:scale-110 duration-500 hover:border-indigo-600 hover:bg-indigo-600 transition-colors group">
+                        <div class="grid justify-center">
+                            <PlusCircleIcon class="w-5 h-5 group-hover:text-white duration-500 transition-colors"/>
+                        </div>
+                        <div class="font-semibold group-hover:text-white duration-500 transition-colors">
+                            Buat Lingkaran
+                        </div>
+                    </div>
                 </div>
             </div>
+        </div>
+        <div>
+            a
         </div>
         <!-- <div class="grid grid-cols-3 gap-2">
             <div class="border border-white">
@@ -55,12 +66,12 @@
     </div>
 </template>
 <script>
-import { CursorArrowRaysIcon, MapPinIcon, MapIcon, StopIcon } from '@heroicons/vue/24/solid'
+import { CursorArrowRaysIcon, MapPinIcon, MapIcon, StopIcon,PlusCircleIcon } from '@heroicons/vue/24/solid'
 import { mapState } from 'vuex'; 
 
 export default{
     components:{
-        CursorArrowRaysIcon, MapPinIcon, MapIcon, StopIcon
+        CursorArrowRaysIcon, MapPinIcon, MapIcon, StopIcon, PlusCircleIcon
     },
     computed: {
         ...mapState({

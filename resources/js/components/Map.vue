@@ -80,6 +80,9 @@ export default {
         case 'ADD_POLYGON':
           this.$store.dispatch('addPolygon',[e.latlng.lat,e.latlng.lng,])
           break;
+        case 'ADD_CIRLCE':
+          this.$store.dispatch('addCircle',[e.latlng.lat,e.latlng.lng,])
+          break;
         default:
           break;
       }

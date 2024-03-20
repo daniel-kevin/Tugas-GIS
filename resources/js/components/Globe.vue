@@ -20,6 +20,7 @@
 // import Globe from 'globe.gl';
 import { mapState } from 'vuex';
 import markerImage from '../../../resources/assets/img/marker.png'
+import marker3Png from '../../../resources/assets/img/marker3.png'
 export default{
     computed: {
         ...mapState({
