@@ -8,7 +8,7 @@
         ></l-tile-layer>
         <LControlScale position="bottomleft"/>
         <template v-if="markers.length > 0">
-          <template v-for="(marker,i) in markers">
+          <template v-for="(marker,i) in markers" :key="mapKey">
             <LMarker
             :lat-lng="[marker.lat,marker.lng]">
             <LPopup>
@@ -58,7 +58,8 @@ export default {
       map: '',
       zoom: 2,
       mapObject: null,
-      center: [47.41322, -1.219482]
+      center: [47.41322, -1.219482],
+      mapKey: 0,
     }
   },
   mounted(){
@@ -68,6 +69,7 @@ export default {
   },
   methods:{
     clickMap(e){
+      console.log(this.curLocation)
       switch(this.aksi){
         case 'Aksi':
           break;
@@ -92,7 +94,9 @@ export default {
     async onMapReady(){
       this.mapObject = this.$refs.map.leafletObject
       if(navigator.geolocation){
+        console.log('test')
         await navigator.geolocation.getCurrentPosition(this.setCurrentPosition)
+        this.mapKey++
       }
       console.log(this.markers)
     },
