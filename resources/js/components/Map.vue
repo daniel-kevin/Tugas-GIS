@@ -62,9 +62,9 @@ export default {
     }
   },
   mounted(){
-    if(navigator.geolocation){
-        navigator.geolocation.getCurrentPosition(this.setCurrentPosition)
-      }
+    // if(navigator.geolocation){
+    //     navigator.geolocation.getCurrentPosition(this.setCurrentPosition)
+    //   }
   },
   methods:{
     clickMap(e){
@@ -91,6 +91,9 @@ export default {
     },
     onMapReady(){
       this.mapObject = this.$refs.map.leafletObject
+      if(navigator.geolocation){
+        navigator.geolocation.getCurrentPosition(this.setCurrentPosition)
+      }
       console.log(this.markers)
     },
     setCurrentPosition(position){
