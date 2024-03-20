@@ -89,10 +89,10 @@ export default {
       // this.waypoints.push({lat: e.latlng.lat, lng:e.latlng.lng})
       // console.log(this.waypoints)
     },
-    onMapReady(){
+    async onMapReady(){
       this.mapObject = this.$refs.map.leafletObject
       if(navigator.geolocation){
-        navigator.geolocation.getCurrentPosition(this.setCurrentPosition)
+        await navigator.geolocation.getCurrentPosition(this.setCurrentPosition)
       }
       console.log(this.markers)
     },
