@@ -22,3 +22,14 @@ Route::get('/', function () {
 Route::prefix('api')->group(function () {
     Route::get('/object/get-object',[ObjectController::class,'getObject']);
 });
+
+Route::get('/version', function() {
+    return response()->json([
+        'status' => true,
+        'message' => 'ok',
+        'data' => array(
+            'version' => '1.0.0',
+            'date' => '25 Maret 2024'
+        )
+    ]);
+});
