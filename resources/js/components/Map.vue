@@ -1,5 +1,5 @@
 <template>
-    <div class="h-screen">
+    <div class="h-screen z-0">
       <l-map ref="map" v-model:zoom="zoom" :center="curLocation" @click="clickMap" @ready="onMapReady">
         <l-tile-layer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -8,7 +8,7 @@
         ></l-tile-layer>
         <LControlScale position="bottomleft"/>
         <template v-if="markers.length > 0">
-          <template v-for="(marker,i) in markers" :key="mapKey">
+          <template v-for="(marker,i) in markers">
             <LMarker
             :lat-lng="[marker.lat,marker.lng]">
             <LPopup>
@@ -28,6 +28,35 @@
         <template v-if="polygon.length > 1">
           <l-polygon :lat-lngs="polygon" :color="'green'"></l-polygon>
         </template>
+        <template v-if="objectMarker.length > 0">
+          <template v-for="(marker,i) in objectMarker">
+            <LMarker
+            :lat-lng="[marker.latitude,marker.longitude]">
+            <LPopup>
+              <div class="bg-blue-800 text-center text-white p-2 whitespace-nowrap min-w-f">
+                {{ marker.nama }}
+              </div>
+              <div class="bg-white shadow-md p-2 grid grid-cols-12 min-w-72">
+                <div class="col-span-3">
+                  Latitude 
+                </div>
+                <div class="col-span-9">
+                  : {{ marker.latitude }}
+                </div>
+                <div class="col-span-3">
+                  Longitude 
+                </div>
+                <div class="col-span-9">
+                  : {{ marker.longitude }}
+                </div>
+                <div class="w-full col-span-12 text-center bg-blue-500 text-white hover:bg-blue-700 hover:cursor-pointer" @click="toggleModal(marker)">
+                  Details...
+                </div>
+              </div>
+            </LPopup>
+          </LMarker>
+          </template>
+        </template>
       </l-map>
     </div>
 </template>
@@ -44,6 +73,7 @@ export default {
     LMarker,LRoutingMachine,LControlScale, LPopup,
     LPolygon
   },
+  emits:['detailClick'],
   computed: {
     ...mapState({
         aksi: s => s.main.aksi,
@@ -51,12 +81,13 @@ export default {
         markers: s => s.location.markers,
         waypoints: s => s.location.waypoints,
         polygon: s => s.location.polygon,
+        objectMarker: s => s.location.objectMarker,
     }),
   },
   data(){
     return{
       map: '',
-      zoom: 2,
+      zoom: 15,
       mapObject: null,
       center: [47.41322, -1.219482],
       mapKey: 0,
@@ -94,11 +125,8 @@ export default {
     async onMapReady(){
       this.mapObject = this.$refs.map.leafletObject
       if(navigator.geolocation){
-        console.log('test')
-        await navigator.geolocation.getCurrentPosition(this.setCurrentPosition)
-        this.mapKey++
+        navigator.geolocation.getCurrentPosition(this.setCurrentPosition)
       }
-      console.log(this.markers)
     },
     setCurrentPosition(position){
       let latitude = position.coords.latitude
@@ -109,6 +137,11 @@ export default {
       this.$store.commit('SET_CUR_LOCATION_GLOBE', {lng:longitude, lat:latitude, height:10000})
       this.$store.dispatch('addMarker',{lat: latitude, lng: longitude, text:'Latitude: '+latitude+'\n'+ 'Longitude: ' + longitude, title:'Current Position'})
       // this.markers.push({lat: latitude, lng: longitude, text:'Latitude: '+latitude+'\n'+ 'Longitude: ' + longitude, title:'Current Position'})
+    },
+    async toggleModal(data){
+      console.log(data)
+      this.$store.commit('SET_CUR_MARKER_DETAIL', data)
+      this.$emit('detailClick', data)
     }
   }
 };

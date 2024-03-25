@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Api\ObjectController;
+use App\Models\MasterObject;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,4 +17,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('app');
+});
+
+Route::prefix('api')->group(function () {
+    Route::get('/object/get-object',[ObjectController::class,'getObject']);
 });

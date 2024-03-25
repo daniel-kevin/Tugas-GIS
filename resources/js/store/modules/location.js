@@ -6,13 +6,18 @@ const ActionType = {
     SET_WAYPOINTS: 'SET_WAYPOINTS',
     SET_POLYGON: 'SET_POLYGON',
     SET_CUR_LOCATION_GLOBE: 'SET_CUR_LOCATION_GLOBE',
+    SET_OBJECT_MARKER: 'SET_OBJECT_MARKER',
+    SET_CUR_MARKER_DETAIL: 'SET_CUR_MARKER_DETAIL',
 }
 const state = {
     curLocation: [47.41322, -1.219482],
     markers:[],
     waypoints: [],
     polygon: [],
-    curLocationGlobe: {lng:115.1715031, lat:-8.8044337, height:10000}
+    curLocationGlobe: {lng:115.1715031, lat:-8.8044337, height:10000000},
+    objectMarker:[],
+
+    curMarkerDetail: {},
   }
   
 const mutations = {
@@ -31,6 +36,13 @@ const mutations = {
     [ActionType.SET_CUR_LOCATION_GLOBE](state,data){
         state.curLocationGlobe = data
     },
+    [ActionType.SET_OBJECT_MARKER](state,data){
+        state.objectMarker = data
+    },
+    [ActionType.SET_CUR_MARKER_DETAIL](state,data){
+        console.log(data)
+        state.curMarkerDetail = data
+    },
 }
   
 const actions = {
@@ -43,8 +55,10 @@ const actions = {
     },
     addPolygon({commit}, marker){
         state.polygon.push(marker)
-        console.log(state.polygon.length)
     },
+    addObjectMarker({commit}, marker){
+        state.objectMarker.push(marker)
+    }
 }
   
 const getters = {

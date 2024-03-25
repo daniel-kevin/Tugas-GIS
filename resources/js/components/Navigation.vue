@@ -49,9 +49,6 @@
                 </div>
             </div>
         </div>
-        <div>
-            a
-        </div>
         <!-- <div class="grid grid-cols-3 gap-2">
             <div class="border border-white">
                 aaaaaaaaaaaaaaa

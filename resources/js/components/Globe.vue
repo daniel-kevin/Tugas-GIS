@@ -36,14 +36,14 @@ export default{
         return{
             globeDiv: null,
             camera: {
-            position: {
-                lng: 104.06,
-                lat: 30.67,
-                height: 2000
-            },
-            heading: 360,
-            pitch: -90,
-            roll: 0
+                position: {
+                    lng: 104.06,
+                    lat: 30.67,
+                    height: 10000000
+                },
+                heading: 360,
+                pitch: -90,
+                roll: 0
             },
             animation: false,
             markerImage: markerImage
@@ -83,7 +83,7 @@ export default{
             // Get Cesium and viewer instances here, then execute the relevant logic code
             this.camera.position.lng = this.curLocationGlobe.lng
             this.camera.position.lat =  this.curLocationGlobe.lat
-            this.camera.position.height = this.curLocationGlobe.height
+            this.camera.position.height = 10000000
             this.animation = true
         }
      }
