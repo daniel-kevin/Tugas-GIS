@@ -23,34 +23,36 @@
     @close="closeModal"
     >
         <div class="w-auto" v-if="dataModal">
-            <div class="bg-blue-700 text-white text-center p-1">
-               {{ markerDetail?.tipe_object?.nama }}
+            <div class="text-white py-2 px-4 font-bold" style="background-color: rgb(4, 26, 41);">
+               {{ markerDetail?.nama }}
             </div>
-            <div class="bg-white p-2 overflow-auto max-h-dvh">
-                <Carousel :items-to-show="1" :wrap-around="true">
-                    <Slide v-for="slide in markerDetail.gambar" :key="slide">
-                        <div class="carousel__item">
-                            <img :src="slide.url" alt="" class="w-full object-contain">
-                        </div>
-                    </Slide>
+            <div class="bg-sky-950 p-2 max-h-dvh">
+                <div class="h-fit">
+                    <Carousel :items-to-show="1" :wrap-around="true">
+                        <Slide v-for="slide in markerDetail.gambar" :key="slide">
+                            <div class="carousel__item">
+                                <img :src="slide.url" alt="" class="w-full object-contain">
+                            </div>
+                        </Slide>
+    
+                        <template #addons>
+                            <Navigation />
+                        </template>
+                    </Carousel>
 
-                    <template #addons>
-                    <Navigation />
-                    </template>
-                </Carousel>
-                <div class="text-2xl font-medium border-t-4 border-gray-300 mt-2 mb-1">
-                    {{ markerDetail.nama }}
                 </div>
-                <div>
+                <div class="text-2xl font-medium border-t border-cyan-900 mt-1">
+                </div>
+                <div class="py-3">
                     <div class="grid grid-cols-12">
-                        <div class="font-bold col-span-2">
+                        <div class="font-bold col-span-2 text-gray-300">
                             Alamat
                         </div>
-                        <div class="col-span-10">
+                        <div class="col-span-10 text-gray-300">
                             : {{ markerDetail.alamat }}
                         </div>
                     </div>
-                    <div class="grid grid-cols-12">
+                    <div class="grid grid-cols-12 text-gray-300">
                         <div class="font-bold col-span-2">
                             Telepon
                         </div>
@@ -59,7 +61,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="border-y-2 border-gray-300 py-2">
+                <div class="border-t border-cyan-900 py-4 text-gray-300">
                     {{ markerDetail.desc }}
                 </div>
                 <!-- <div class="flex items-center overflow-auto h-32">

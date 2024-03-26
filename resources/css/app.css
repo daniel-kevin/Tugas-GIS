@@ -15,10 +15,11 @@
 }
 
 .leaflet-popup-close-button > span{
-    color:black;
+    color:white;
     position: absolute;
     top: 0px;
     right: 2px;
+    background-color: rgba(128, 128, 128, 0.5);
 }
 .leaflet-popup-close-button{
     position: relative;
